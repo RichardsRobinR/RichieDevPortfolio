@@ -1,14 +1,14 @@
 
 import Hero from "./components/Hero";
-import ScrollTriggered from "./components/ScrollTriggered";
 import Widgets from "./components/Widgets";
+import SecondSection from "./components/SecondSection.tsx";
 
 
 const App = () => {
   return(
     <>
     <Hero/>
-    <ScrollTriggered/>
+    <SecondSection/>
     {/* <ProjectCards/> */}
     <Widgets/>
     </>
