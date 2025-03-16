@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
-const words = ["I build scalable apps.", "I love DevOps.", "I craft beautiful UIs."];
+const words = ["Coding 24/7", "Tech Enthusiast", "Software Developer", "DevOps"];
 
 export default function HeroTyping() {
   const [wordIndex, setWordIndex] = useState(0);
@@ -29,7 +29,7 @@ export default function HeroTyping() {
   }, [charIndex, isDeleting, wordIndex]);
 
   return (
-    <motion.h2 className="text-2xl sm:text-4xl font-mono mt-4">
+    <motion.h2 className="text-1xl text-gray-300 md:text-4xl font-mono mt-4">
     {displayText}
     <motion.span
       animate={{ opacity: [0, 1, 0] }}

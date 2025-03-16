@@ -9,22 +9,23 @@ export default function ScrollTriggered() {
         //     ))}
         // </div>
 
-        <div className="h-screen w-full flex flex-row items-center justify-between">
+        <div className="h-auto md:h-screen w-full flex flex-col md:flex-row md:items-center bg-gray-900">
             <div style={container}>
                 <Card i={0} emoji={<span className="text-gray-900">R</span>} hueA={290} hueB={320} key={"R"} />
             </div>
             {/* <div style={container}>
                 <Card i={0} emoji={"🍅"} hueA={340} hueB={10} key={"🍅"} />
             </div> */}
-            <div className="w-1/2 px-8">
-            <p className="text-lg leading-relaxed max-w-2xl">
-                Enthusiastic Backend Developer with a strong foundation in building scalable APIs, database management,
-                and backend logic using Python, Django, and Node.js. Skilled in containerization with Docker, orchestration
-                using Kubernetes, and integrating CI/CD pipelines for efficient deployments. Passionate about writing clean,
-                maintainable code, optimizing system performance, and collaborating with cross-functional teams to deliver high
-                quality applications.
-            </p>
-        </div>
+            {/*w-1/2 px-8*/}
+            <div className="">
+                <p className="text-left md:text-lg leading-relaxed md:max-w-3xl">
+                    Enthusiastic Backend Developer with a strong foundation in building scalable APIs, database management,
+                    and backend logic using Python, Django, and Node.js. Skilled in containerization with Docker, orchestration
+                    using Kubernetes, and integrating CI/CD pipelines for efficient deployments. Passionate about writing clean,
+                    maintainable code, optimizing system performance, and collaborating with cross-functional teams to deliver high
+                    quality applications.
+                </p>
+            </div>
 
         </div>
     )

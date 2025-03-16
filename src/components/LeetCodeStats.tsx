@@ -1,14 +1,11 @@
-import { useEffect } from 'react';
+
 
 const LeetCodeStats = ({ easy = 0, medium = 0, hard = 0 }) => {
-  useEffect(() => {
-    document.documentElement.style.setProperty('--easy-percentage', easy.toString());
-    document.documentElement.style.setProperty('--medium-percentage', medium.toString());
-    document.documentElement.style.setProperty('--hard-percentage', hard.toString());
-  }, [easy, medium, hard]);
+
 
   return (
-    <div className="row-span-2 flex flex-col items-center justify-center h-96 w-80 rounded-2xl bg-gray-900">
+    <div className="row-span-2 flex flex-col items-center justify-around h-96 w-80 rounded-2xl bg-gray-900">
+      <h1 className="text-3xl mt-6">LeetCode</h1>
       <div className="relative w-52 h-52">
         {/* Outer Ring (easy) */}
         <svg className="w-full h-full transform -rotate-90">
