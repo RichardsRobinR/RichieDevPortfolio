@@ -1,60 +1,9 @@
-import * as motion from "motion/react-client"
-import type { Variants } from "motion/react"
-
-export default function ScrollTriggered() {
-    return (
-        // <div style={container}>
-        //     {food.map(([emoji, hueA, hueB], i) => (
-        //         <Card i={i} emoji={emoji} hueA={hueA} hueB={hueB} key={emoji} />
-        //     ))}
-        // </div>
-
-        <div className="h-auto md:h-screen w-full flex flex-col md:flex-row md:items-center bg-gray-900">
-            <div style={container}>
-                <Card i={0} emoji={<span className="text-gray-900">R</span>} hueA={290} hueB={320} key={"R"} />
-            </div>
-            {/* <div style={container}>
-                <Card i={0} emoji={"🍅"} hueA={340} hueB={10} key={"🍅"} />
-            </div> */}
-            {/*w-1/2 px-8*/}
-            <div className="">
-                <p className="text-left md:text-lg leading-relaxed md:max-w-3xl">
-                    Enthusiastic Backend Developer with a strong foundation in building scalable APIs, database management,
-                    and backend logic using Python, Django, and Node.js. Skilled in containerization with Docker, orchestration
-                    using Kubernetes, and integrating CI/CD pipelines for efficient deployments. Passionate about writing clean,
-                    maintainable code, optimizing system performance, and collaborating with cross-functional teams to deliver high
-                    quality applications.
-                </p>
-            </div>
-
-        </div>
-    )
-}
+import { motion } from "framer-motion"
+import type { Variants } from "framer-motion"
 
 interface CardProps {
-    emoji: React.ReactNode
     hueA: number
     hueB: number
-    i: number
-}
-
-function Card({ emoji, hueA, hueB, i }: CardProps) {
-    const background = `linear-gradient(306deg, ${hue(hueA)}, ${hue(hueB)})`
-
-    return (
-        <motion.div
-            className={`card-container-${i}`}
-            style={cardContainer}
-            initial="offscreen"
-            whileInView="onscreen"
-            viewport={{ amount: 0.8 }}
-        >
-            <div style={{ ...splash, background }} />
-            <motion.div style={card} variants={cardVariants} className="card">
-                {emoji}
-            </motion.div>
-        </motion.div>
-    )
 }
 
 const cardVariants: Variants = {
@@ -72,68 +21,94 @@ const cardVariants: Variants = {
     },
 }
 
-const hue = (h: number) => `hsl(${h}, 100%, 50%)`
+export default function ScrollTriggered() {
+    return (
+        <div className="h-auto md:h-screen w-full flex flex-col md:flex-row md:items-center bg-gray-900">
+            <div className="my-[100px] mx-auto max-w-[500px] w-full pb-[100px]">
+                <Card hueA={290} hueB={320} />
+            </div>
 
-/**
- * ==============   Styles   ================
- */
-
-const container: React.CSSProperties = {
-    // margin: "100px auto",
-    // maxWidth: 500,
-    // paddingBottom: 100,
-    // width: "100%",
-
-    margin: "100px auto",
-    maxWidth: 500,
-    paddingBottom: 100,
-    width: "100%",
+            <div className="w-full md:w-1/2 px-0 md:px-8">
+                <p className="text-gray-300 text-left md:text-lg leading-relaxed max-w-3xl mx-4 md:mx-auto">
+                    Enthusiastic Backend Developer with a strong foundation in building scalable APIs, database management,
+                    and backend logic using Python, Django, and Node.js. Skilled in containerization with Docker, orchestration
+                    using Kubernetes, and integrating CI/CD pipelines for efficient deployments. Passionate about writing clean,
+                    maintainable code, optimizing system performance, and collaborating with cross-functional teams to deliver high
+                    quality applications.
+                </p>
+            </div>
+        </div>
+    )
 }
 
-const cardContainer: React.CSSProperties = {
-    overflow: "hidden",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    position: "relative",
-    paddingTop: 20,
-    marginBottom: -120,
+function Card({ hueA, hueB }: CardProps) {
+    return (
+        <motion.div
+            className="overflow-hidden flex justify-center items-center relative pt-5 -mb-[120px]"
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ amount: 0.8 }}
+        >
+            <svg
+                className="absolute inset-0 w-full h-full"
+                viewBox="0 0 500 450"
+                preserveAspectRatio="none"
+            >
+                <defs>
+                    <linearGradient id="gradient" gradientTransform={`rotate(306 250 225)`}>
+                        <stop offset="0%" stopColor={`hsl(${hueA}, 100%, 50%)`} />
+                        <stop offset="100%" stopColor={`hsl(${hueB}, 100%, 50%)`} />
+                    </linearGradient>
+                    <clipPath id="shapeClip">
+                        <path d="M 0 303.5 C 0 292.454 8.995 285.101 20 283.5 L 460 219.5 C 470.085 218.033 480 228.454 480 239.5 L 500 430 C 500 441.046 491.046 450 480 450 L 20 450 C 8.954 450 0 441.046 0 430 Z"/>
+                    </clipPath>
+                </defs>
+                <rect
+                    width="100%"
+                    height="100%"
+                    fill="url(#gradient)"
+                    clipPath="url(#shapeClip)"
+                />
+            </svg>
+
+            <motion.svg
+                className="origin-[10%_60%]"
+                viewBox="0 0 300 430"
+                width="300px"
+                height="430px"
+                variants={cardVariants}
+            >
+                <defs>
+                    <filter id="shadow">
+                        <feDropShadow dx="0" dy="0" stdDeviation="0.5" floodOpacity="0.075"/>
+                        <feDropShadow dx="0" dy="0" stdDeviation="1" floodOpacity="0.075"/>
+                        <feDropShadow dx="0" dy="0" stdDeviation="2" floodOpacity="0.075"/>
+                        <feDropShadow dx="0" dy="0" stdDeviation="4" floodOpacity="0.075"/>
+                        <feDropShadow dx="0" dy="0" stdDeviation="8" floodOpacity="0.075"/>
+                    </filter>
+                </defs>
+
+                <rect
+                    width="280"
+                    height="410"
+                    x="10"
+                    y="10"
+                    rx="20"
+                    ry="20"
+                    fill="#f3f4f6"
+                    filter="url(#shadow)"
+                />
+                <text
+                    x="50%"
+                    y="50%"
+                    fontSize="164"
+                    dominantBaseline="middle"
+                    textAnchor="middle"
+                    fill="#111827"
+                >
+                    R
+                </text>
+            </motion.svg>
+        </motion.div>
+    )
 }
-
-const splash: React.CSSProperties = {
-    position: "absolute",
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    clipPath: `path("M 0 303.5 C 0 292.454 8.995 285.101 20 283.5 L 460 219.5 C 470.085 218.033 480 228.454 480 239.5 L 500 430 C 500 441.046 491.046 450 480 450 L 20 450 C 8.954 450 0 441.046 0 430 Z")`,
-}
-
-const card: React.CSSProperties = {
-    fontSize: 164,
-    width: 300,
-    height: 430,
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    borderRadius: 20,
-    background: "#f5f5f5",
-    boxShadow:
-        "0 0 1px hsl(0deg 0% 0% / 0.075), 0 0 2px hsl(0deg 0% 0% / 0.075), 0 0 4px hsl(0deg 0% 0% / 0.075), 0 0 8px hsl(0deg 0% 0% / 0.075), 0 0 16px hsl(0deg 0% 0% / 0.075)",
-    transformOrigin: "10% 60%",
-}
-
-/**
- * ==============   Data   ================
- */
-
-// const food: [string, number, number][] = [
-//     ["🍅", 340, 10],
-//     ["🍊", 20, 40],
-//     ["🍋", 60, 90],
-//     ["🍐", 80, 120],
-//     ["🍏", 100, 140],
-//     ["🫐", 205, 245],
-//     ["🍆", 260, 290],
-//     ["🍇", 290, 320],
-// ]
