@@ -1,6 +1,6 @@
-import LeetCodeStats from "./LeetCodeStats";
-import Weather from "./Weather";
-import YearProgressBar from "./YearProgressBar";
+import LeetCodeStats from "../widgets/LeetCodeStats.tsx";
+import Weather from "../widgets/Weather.tsx";
+import YearProgressBar from "../widgets/YearProgressBar.tsx";
 import {useEffect, useState} from "react";
 
 interface ApiResponse {
@@ -74,7 +74,7 @@ const Widgets = () => {
     }, []);
 
     return (
-        <div className=" flex flex-col items-center justify-around h-screen w-full">
+        <div className=" flex flex-col items-center justify-around xl:h-screen w-full px-24">
 
             <h1 className="text-gray-300 my-6  text-3xl md:text-8xl">Widgets</h1>
             <div className="grid md:grid-cols-2 place-items-center gap-4">
