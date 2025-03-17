@@ -29,7 +29,7 @@ export default function HeroTyping() {
   }, [charIndex, isDeleting, wordIndex]);
 
   return (
-    <motion.h2 className="text-1xl text-gray-300 md:text-4xl font-mono mt-4">
+    <motion.h2 className="text-1xl text-zinc-400 md:text-4xl font-mono mt-4">
     {displayText}
     <motion.span
       animate={{ opacity: [0, 1, 0] }}

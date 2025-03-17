@@ -12,8 +12,11 @@ const Hero = () => {
                 duration: 0.4,
                 scale: { type: "spring", bounce: 0.5 },
             }}
-            className="text-3xl text-gray-300 text-center md:text-8xl font-bold"
-            >Hi, I'm Richards Robin R</motion.h1>
+            className="text-3xl text-white text-center md:text-8xl font-bold"
+            >
+                Hi, I'm <span className="text-emerald-500">Richards Robin R</span>
+
+            </motion.h1>
         
             <HeroTyping/>
             

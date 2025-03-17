@@ -74,7 +74,7 @@ const Widgets = () => {
     }, []);
 
     return (
-        <div className="bg-slate-950 flex flex-col items-center justify-around h-screen w-full">
+        <div className=" flex flex-col items-center justify-around h-screen w-full">
 
             <h1 className="text-gray-300 my-6  text-3xl md:text-8xl">Widgets</h1>
             <div className="grid md:grid-cols-2 place-items-center gap-4">
@@ -83,6 +83,7 @@ const Widgets = () => {
                     <LeetCodeStats easy={apiData.leetcode_cleaned_data["easy_completed_count"]} hard={apiData.leetcode_cleaned_data["hard_completed_count"]} medium={apiData.leetcode_cleaned_data["medium_completed_count"]}/>
                     <YearProgressBar percentage={apiData.completed_percentage} />
                     <Weather weather_cleaned_data={apiData.weather_cleaned_data}/>
+                    {/*<XTweet/>*/}
                     </>
                 }
 
