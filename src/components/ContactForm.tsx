@@ -1,7 +1,7 @@
 
 const ContactForm = () => {
     return (
-        <div className="bg-zinc-900 w-[33%] p-6 rounded-lg">
+        <div className="bg-zinc-900 md:w-[33%] p-6 rounded-lg">
 
             <div className="mb-4">
                 <h1 className="text-3xl font-semibold tracking-tight">Send a Message</h1>
