@@ -1,11 +1,16 @@
 import ContactForm from "./ContactForm.tsx";
+import LetsConnectCard from "./LetsConnectCard.tsx";
 
 
 const ContactSection = () => {
     return (
+
         <div className="h-auto w-full bg-zinc-900/50
-         flex justify-center items-center md:h-screen  py-6">
-            <ContactForm/>
+         flex justify-center items-center md:h-screen ">
+            <div className=" container grid grid-cols-1 md:grid-cols-2 gap-6 py-6 max-w-[360px] md:max-w-4xl">
+                <LetsConnectCard/>
+                <ContactForm/>
+            </div>
         </div>
     );
 }
