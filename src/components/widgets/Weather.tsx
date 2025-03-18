@@ -2,10 +2,8 @@
 const Weather = ({weather_cleaned_data }) => {
 
   return (
-    <div>
-
-
-        <div className="relative bg-[#c9e5ff] rounded-2xl h-40 w-80 flex flex-col justify-between pb-3 pt-3 pr-2 pl-2">
+    <div className="w-full">
+        <div className="relative bg-[#c9e5ff] rounded-2xl h-40 max-w-[400px] flex flex-col justify-between pb-3 pt-3 pr-2 pl-2">
             <div className="flex justify-between ">
                 <div className="flex flex-col justify-start">
                     <p className="text-lg text-black">Weather</p>

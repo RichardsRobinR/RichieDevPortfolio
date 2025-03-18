@@ -4,7 +4,7 @@ const LeetCodeStats = ({ easy = 0, medium = 0, hard = 0 }) => {
 
 
   return (
-    <div className="row-span-2 flex flex-col items-center justify-around h-96 w-80 rounded-2xl bg-gray-900">
+    <div className="row-span-2 flex flex-col items-center justify-around h-[336px] max-w-[400px] w-full rounded-2xl bg-gray-900">
       <h1 className="text-3xl mt-6">LeetCode</h1>
       <div className="relative w-52 h-52">
         {/* Outer Ring (easy) */}
