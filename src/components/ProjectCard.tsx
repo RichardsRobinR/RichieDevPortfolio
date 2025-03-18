@@ -3,7 +3,7 @@ const ProjectCard = ({title = "",des = ""}) => {
  
   return (
       <div className=" bg-zinc-950 h-[420px] max-w-[400px]
-      flex flex-col  justify-between border border-zinc-800 rounded-lg overflow-hidden ">
+      flex flex-col  justify-between border border-zinc-800 rounded-lg overflow-hidden shadow-md shadow-zinc-800/50 ">
             <div className="flex-1">
             <img src="empty.svg" alt="Rotated SVG" className=" h-[210px] w-full object-cover" />
             </div>

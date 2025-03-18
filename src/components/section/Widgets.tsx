@@ -74,10 +74,10 @@ const Widgets = () => {
     }, []);
 
     return (
-        <div className=" flex flex-col items-center justify-around xl:h-screen w-full px-8 py-6">
+        <div className="  flex flex-col items-center justify-around xl:h-screen w-full px-8 py-6">
             <h1 className="text-gray-300  text-3xl mb-4 md:text-6xl">Widgets</h1>
-            <div className="grid md:grid-cols-2 place-items-center gap-4">
-                {loading ? (<p>Loading</p>) : apiData &&
+            <div className={`grid ${loading ? `md:grid-cols-1` : `md:grid-cols-2`} place-items-center gap-4`}>
+                {loading ? (<img src="tube_spinner.svg" alt="tube spinner" className="w-72 h-72" /> ) : apiData &&
                     <>
                     <LeetCodeStats easy={apiData.leetcode_cleaned_data["easy_completed_count"]} hard={apiData.leetcode_cleaned_data["hard_completed_count"]} medium={apiData.leetcode_cleaned_data["medium_completed_count"]}/>
                     <YearProgressBar percentage={apiData.completed_percentage} />

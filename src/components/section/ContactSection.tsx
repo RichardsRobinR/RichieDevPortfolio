@@ -7,7 +7,7 @@ const ContactSection = () => {
 
         <div className=" w-full bg-zinc-900/50
          flex justify-center items-center xd:h-screen px-8">
-            <div className=" container grid grid-cols-1 md:grid-cols-2 gap-6 py-6 max-w-[360px] md:max-w-4xl">
+            <div className=" container grid grid-cols-1 md:grid-cols-2 gap-6 py-6 max-w-[400px] md:max-w-4xl">
                 <LetsConnectCard/>
                 <ContactForm/>
             </div>
