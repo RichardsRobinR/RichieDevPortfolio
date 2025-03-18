@@ -6,10 +6,10 @@ const LetsConnectCard = () => {
             <h1 className="text-3xl font-semibold tracking-tight">Let's Connect</h1>
 
             <div className="my-6 flex flex-col">
-                <ContactDetails img="" info="linkedin.com/in/richards-robin-r"/>
-                <ContactDetails img="" info="richardsrobin.r15@gmail.com"/>
-                <ContactDetails img="" info="github.com/RichardsRobinR"/>
-                <ContactDetails img="" info="+91 9945789825"/>
+                <ContactDetails  info="linkedin.com/in/richards-robin-r"/>
+                <ContactDetails  info="richardsrobin.r15@gmail.com"/>
+                <ContactDetails  info="github.com/RichardsRobinR"/>
+                <ContactDetails  info="+91 9945789825"/>
             </div>
 
         </div>

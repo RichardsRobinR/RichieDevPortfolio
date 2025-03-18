@@ -1,5 +1,5 @@
 
-const ProjectCard = () => {
+const ProjectCard = ({title = "",des = ""}) => {
  
   return (
       <div className=" bg-zinc-950 h-[420px] max-w-[400px]
@@ -10,9 +10,9 @@ const ProjectCard = () => {
 
 
             <div className="mx-6 my-7 flex flex-col justify-start flex-1 " >
-            <h1 className="text-3xl">Title</h1>
+            <h1 className="text-2xl tracking-tight mb-2">{title}</h1>
             <p>
-              This is the description of the content below the image.
+                {des}
             </p>
             </div>
 

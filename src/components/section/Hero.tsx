@@ -3,7 +3,7 @@ import HeroTyping from "../HeroTying.tsx";
 
 const Hero = () => {
     return(
-        <div className="h-screen w-full flex flex-col items-center justify-center px-24 ">
+        <div className="h-screen w-full flex flex-col items-center justify-center px-16 ">
             
             <motion.h1
             initial={{ opacity: 0, scale: 0 }}

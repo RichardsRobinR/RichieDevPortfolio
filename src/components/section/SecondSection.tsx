@@ -2,7 +2,7 @@
 export default function SecondSection() {
     return (
         <div className="xl:h-screen w-full flex flex-col md:flex-row items-center bg-zinc-900/50
-         justify-between xl:justify-center mx-auto px-24 gap-10  py-6">
+         justify-between xl:justify-center mx-auto px-16 gap-10  py-6">
 
             <img src="r_card.svg" alt="Rotated SVG" className="w-80 h-140 -rotate-12 px-8 object-contain" />
 
