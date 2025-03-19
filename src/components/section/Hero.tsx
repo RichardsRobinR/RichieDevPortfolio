@@ -14,7 +14,7 @@ const Hero = () => {
             }}
             className="text-5xl text-white text-center md:text-8xl font-bold"
             >
-                Hi, I'm <span className="text-emerald-500">Richards Robin R</span>
+                Hi, I'm <span className="text-violet-500">Richards Robin R</span>
 
             </motion.h1>
         
